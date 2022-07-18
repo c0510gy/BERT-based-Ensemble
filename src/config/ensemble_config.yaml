@@ -1,0 +1,8 @@
+task: gender_bias
+ensemble_models:
+  [
+    { bert_model: electra, pretrain_model_name: beomi/beep-KcELECTRA-base-hate, path: ./model/best_model.pt },
+    { bert_model: roberta, pretrain_model_name: klue/roberta-base, path: ./model/best_model2.pt },
+  ]
+save_dir: ./model/
+valid_path: ./dev.gender_bias.binary.csv

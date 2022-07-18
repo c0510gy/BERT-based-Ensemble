@@ -1,0 +1,10 @@
+task: gender_bias
+ensemble_models:
+  [
+    { bert_model: electra, pretrain_model_name: beomi/beep-KcELECTRA-base-hate, path: ./model/best_model.pt },
+    { bert_model: roberta, pretrain_model_name: klue/roberta-base, path: ./model/best_model2.pt },
+  ]
+ensemble_weights: [0.5, 0.5]
+distribution_base_ensemble: false
+distribution_base_rules: [{ prediction_path: ./pred.csv, rules: [{ pred: [1, 0], weight: [0.3, 0.7] }] }]
+test_path: ./test.gender_bias.no_label.csv

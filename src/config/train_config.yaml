@@ -1,0 +1,10 @@
+epochs: 50
+batch_size: 8
+lr: 2e-5
+task: gender_bias
+bert_model: electra
+pretrain_model_name: beomi/beep-KcELECTRA-base-hate
+freeze_layers: 0
+save_dir: ./model/
+train_path: ./train.gender_bias.binary.csv
+valid_path: ./dev.gender_bias.binary.csv
